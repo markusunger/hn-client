@@ -1,0 +1,15 @@
+{
+  "name": "hn-client",
+  "version": "0.1.0",
+  "description": "A simple Hacker News reading client written in React",
+  "main": "index.js",
+  "author": "Markus Unger",
+  "scripts": {
+    "dev": "parcel src/index.html"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
