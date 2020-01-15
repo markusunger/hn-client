@@ -26,6 +26,11 @@ header h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: 1.5rem;
+  color: #ff6600;
+}
+
 .story-list {
   flex: 1;
   background-color: #efefef;
