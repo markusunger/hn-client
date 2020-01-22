@@ -9,7 +9,6 @@ class StoryTypeSelector extends React.Component {
 
   handleTypeClick(e) {
     e.preventDefault();
-    console.log(e.target.dataset.type);
     this.props.onTypeChange(e.target.dataset.type);
   }
 

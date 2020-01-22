@@ -23,6 +23,7 @@ class App extends React.Component {
 
   componentDidMount() {
     getStories(this.state.storyType, this.state.offset)
+      .then(stories => stories.filter(s => s))
       .then((stories) => {
         this.setState({
           stories,
@@ -40,6 +41,7 @@ class App extends React.Component {
   onTypeChange(newType) {
     this.setState({ isLoading: true });
     getStories(newType, 0)
+      .then(stories => stories.filter(s => s))
       .then((stories) => {
         this.setState({
           stories,
@@ -59,6 +61,7 @@ class App extends React.Component {
       });
       const { stories } = this.state;
       getStories(this.state.storyType, newOffset)
+        .then(stories => stories.filter(s => s))
         .then(newStories => {
           this.setState({
             stories: stories.concat(newStories),

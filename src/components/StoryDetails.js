@@ -1,8 +1,8 @@
 import React from 'react';
-import { getStoryDetail, getStoryDetails } from '../helpers/api';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import StoryLink from './StoryLink';
 import StoryText from './StoryText';
+import StoryComments from './StoryComments';
 
 class StoryDetails extends React.Component {
   constructor(props) {
@@ -16,7 +16,6 @@ class StoryDetails extends React.Component {
     const story = this.props.selectedStory;
 
     if (story) {
-      console.log(story);
       const time = formatDistanceToNow(new Date(story.time * 1000));
 
       return (
@@ -26,12 +25,14 @@ class StoryDetails extends React.Component {
             <p>from {story.by} {time} ago, {story.score} points | {story.descendants} comments</p>
           </div>
           {story.text ? <StoryText text={story.text} /> : <StoryLink link={story.url} />}
+          <hr />
+          <StoryComments item={story} offset={0} />
         </section>
       );
     } else {
       return (
         <section className="story-details-empty">
-          <div>Select an item from the left</div>
+          <div className="container">Select an item from the left</div>
         </section>
       );
     }

@@ -34,6 +34,9 @@ h2 {
 .story-list {
   flex: 1;
   background-color: #efefef;
+  height: calc(100vh - 4em);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .story-list > ul {
@@ -111,6 +114,9 @@ h2 {
   flex: 2;
   background-color: #fff;
   padding: 2rem;
+  height: calc(100vh - 4em);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .story-details-empty {
